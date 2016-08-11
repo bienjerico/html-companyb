@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-cloak>
   <head>
     <meta charset="utf-8">
     <title>COMPANY.B</title>
     <meta name="author" content="Adtile">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <script src="js/angular.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-    <script src="js/angular.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <link rel="stylesheet" href="css/ie.css">
@@ -69,22 +72,8 @@
           font-size: 18px;
         }
 
-      .about-avatar {
-        width:150px; 
-        border:1px solid #111111;
-        border-radius: 50%;
-        padding:2px;
-        background-color: #f0f0f0;
-      }
 
-      .contact-follous a{
-        text-decoration: none;
-        color: #212121;
-      }
 
-      .clearfix {
-        clear: both;
-      }
 
       /* Laptop */
       @media screen and (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1){
@@ -123,7 +112,57 @@
           }
       }
 
+       .about-avatar {
+        width:150px; 
+        border:1px solid #111111;
+        border-radius: 50%;
+        padding:2px;
+        background-color: #f0f0f0;
+      }
+
+      .contact-follous a{
+        text-decoration: none;
+        color: #212121;
+      }
+
+      .clearfix {
+        clear: both;
+      }
+
+      [ng\:cloak],
+      [ng-cloak],
+      [data-ng-cloak],
+      [x-ng-cloak],
+      .ng-cloak,
+      .x-ng-cloak {
+        display: none !important;
+      }
+
     </style>
+
+    <script>
+      var app = angular.module('app', []);
+
+      // var getData = function(){
+        
+      // }
+
+      app.controller('appController',function($scope,$http) {
+
+        $http.get('shoes-data.json').success(function(response) {
+          console.log(response);
+          $scope.shoes = response;
+        });
+
+
+        // $scope.dropallShoes = function(val){
+        //   if(val==""){
+        //     $scope.search = {};
+        //   }
+        // }
+      });
+    </script>
+
   </head>
   <body>
 
@@ -178,8 +217,13 @@
       </article>
     </section>
 
-    <section id="category">
-      <h1>Category</h1>
+    <section id="category" ng-controller="appController">
+      <article>
+        <h1>Category</h1>
+        <ul ng-repeat="shoe in shoes">
+          <li><img src="imgs/shoes/{{ shoe.filename }}" style="width:150px;"/></li>
+        </ul>
+      </article>
     </section>
 
     <section id="contact">
