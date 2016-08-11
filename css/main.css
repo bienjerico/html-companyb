@@ -1,0 +1,184 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+section[id=home] {
+  background: url('../imgs/wallpaper/shoes-1920x1200.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+section[id=home] article {
+  padding: 250px 0;
+}
+section[id=home] h1 {
+  font-family: 'Fredoka One', cursive,sans-serif;
+  font-weight: bold;
+  color: #1f1c2c;
+  font-size: 40px;
+}
+section[id=home]  p {
+  text-shadow: 0 0 3px #000, 0 0 5px #000;
+  color: #fff;
+  font-size: 20px;
+}
+section[id=about],
+section[id=contact] {
+  background: #fff; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#fff7ef, #FFFFFF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#fff7ef, #FFFFFF); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#fff7ef, #FFFFFF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#fff7ef, #FFFFFF); /* Standard syntax */
+}
+section[id=about] article,
+section[id=contact] article {
+    width: 80%;
+    padding-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+section[id=product] article {
+    width: 100%;
+    padding-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section[id=about] h1,
+section[id=contact] h1,
+section[id=product] h1 {
+  color: #1f1c2c;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-family: 'Fredoka One', cursive,sans-serif;
+}
+section[id=about] p,
+section[id=contact] p {
+    font-size: 18px;
+}
+
+section[id=product] img {
+    width:200px;
+    border-radius: 5px;
+}
+section[id=product] button {
+    background-color: #fff;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+section[id=product] button:hover {
+    background-color: #f1f1f1;
+}
+
+.about-avatar {
+ width:150px;
+ border:1px solid #111111;
+ border-radius: 50%;
+ padding:2px;
+ background-color: #f0f0f0;
+}
+.category-shoe {
+ height:500px;
+ width:100%;
+ overflow-y: auto;
+}
+.category-shoelist {
+ display: inline-block;
+}
+.contact-follous a{
+ text-decoration: none;
+ color: #212121;
+}
+.clearfix {
+ clear: both;
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+ display: none !important;
+}
+
+
+/* Laptop */
+@media screen and (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1){
+   section {
+      height: 700px;
+    }
+    section[id=about] article,
+    section[id=contact] article {
+        width: 80%;
+        padding-top: 50px;
+    }
+    section[id=product] article {
+        width: 100%;
+        padding-top: 50px;
+    }
+    .category-shoe {
+      height:450px;
+      width:100%;
+      overflow-y: auto;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+   section {
+      height: 650px;
+    }
+    section[id=about] article,
+    section[id=contact] article {
+        width: 80%;
+        padding-top: 50px;
+    }
+    section[id=about]  p {
+      font-size: 15px;
+    }
+    section[id=product] article {
+        width: 100%;
+        padding-top: 50px;
+    }
+    .category-shoe {
+      height:400px;
+      width:100%;
+      overflow-y: auto;
+    }
+}
+
+/* Cellphones */
+@media screen and (max-width: 768px) {
+    section {
+      height: 640px;
+    }
+    section[id=home] article {
+      padding: 200px 0;
+    }
+    section[id=home]  p {
+      font-size: 15px;
+    }
+
+    section[id=about] article {
+      padding-top: 40px;
+    }
+    section[id=about]  p {
+      height: 400px;
+      overflow-y: auto;
+      font-size: 15px;
+    }
+    section[id=product] article {
+        width: 100%;
+        padding-top: 30px;
+    }
+    .category-shoe {
+      height:350px;
+      width:100%;
+      overflow-y: auto;
+    }
+}
