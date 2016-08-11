@@ -5,14 +5,11 @@
     <title>COMPANY.B</title>
     <meta name="author" content="Adtile">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
     <script src="js/angular.min.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <link rel="stylesheet" href="css/ie.css">
@@ -34,7 +31,7 @@
         padding: 250px 0;
       }
       section[id=home] h1 {
-        font-family: 'Fredoka One', cursive;
+        font-family: 'Fredoka One', cursive,sans-serif;
         font-weight: bold;
         color: #1f1c2c;
         font-size: 40px;
@@ -44,7 +41,7 @@
         color: #fff;
         font-size: 20px;
       }
-      section[id=about], 
+      section[id=about],
       section[id=contact] {
         background: #fff; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(#fff7ef, #FFFFFF); /* For Safari 5.1 to 6.0 */
@@ -52,42 +49,125 @@
         background: -moz-linear-gradient(#fff7ef, #FFFFFF); /* For Firefox 3.6 to 15 */
         background: linear-gradient(#fff7ef, #FFFFFF); /* Standard syntax */
       }
-      section[id=about] article, 
+      section[id=about] article,
       section[id=contact] article {
           width: 80%;
           padding-top: 150px;
           margin-left: auto;
           margin-right: auto;
       }
+      section[id=product] article {
+          width: 100%;
+          padding-top: 150px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
       section[id=about] h1,
-      section[id=contact] h1 {
+      section[id=contact] h1,
+      section[id=product] h1 {
         color: #1f1c2c;
         padding-bottom: 20px;
         font-size: 30px;
-        font-family: 'Fredoka One', cursive;
+        font-family: 'Fredoka One', cursive,sans-serif;
+      }
+      section[id=about] p,
+      section[id=contact] p {
+          font-size: 18px;
       }
 
-       section[id=about] p,
-       section[id=contact] p {
-          font-size: 18px;
-        }
+      section[id=product] img {
+          width:200px;
 
+      }
+      section[id=product] button {
+          background-color: #fff;
+          border: 1px solid #969696;
+          border-radius: 5px;
+          padding: 10px 15px 10px 15px;
+          cursor: pointer;
+      }
 
+      section[id=product] button:hover {
+          background-color: #f1f1f1;
+      }
+
+      .about-avatar {
+       width:150px;
+       border:1px solid #111111;
+       border-radius: 50%;
+       padding:2px;
+       background-color: #f0f0f0;
+     }
+     .category-shoe {
+       height:500px;
+       width:100%;
+       overflow-y: auto;
+     }
+     .category-shoelist {
+       display: inline-block;
+     }
+     .contact-follous a{
+       text-decoration: none;
+       color: #212121;
+     }
+     .clearfix {
+       clear: both;
+     }
+
+     [ng\:cloak],
+     [ng-cloak],
+     [data-ng-cloak],
+     [x-ng-cloak],
+     .ng-cloak,
+     .x-ng-cloak {
+       display: none !important;
+     }
 
 
       /* Laptop */
       @media screen and (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1){
          section {
-            height: 800px;
+            height: 700px;
+          }
+          section[id=about] article,
+          section[id=contact] article {
+              width: 80%;
+              padding-top: 50px;
+          }
+          section[id=product] article {
+              width: 100%;
+              padding-top: 50px;
+          }
+          .category-shoe {
+            height:450px;
+            width:100%;
+            overflow-y: auto;
           }
       }
 
       /* Tablets */
       @media screen and (min-width: 768px) and (max-width: 1200px) {
          section {
-            height: 800px;
+            height: 650px;
           }
-       
+          section[id=about] article,
+          section[id=contact] article {
+              width: 80%;
+              padding-top: 50px;
+          }
+          section[id=about]  p {
+            font-size: 15px;
+          }
+          section[id=product] article {
+              width: 100%;
+              padding-top: 50px;
+          }
+          .category-shoe {
+            height:400px;
+            width:100%;
+            overflow-y: auto;
+          }
       }
 
       /* Cellphones */
@@ -110,43 +190,20 @@
             overflow-y: auto;
             font-size: 15px;
           }
+          section[id=product] article {
+              width: 100%;
+              padding-top: 30px;
+          }
+          .category-shoe {
+            height:350px;
+            width:100%;
+            overflow-y: auto;
+          }
       }
-
-       .about-avatar {
-        width:150px; 
-        border:1px solid #111111;
-        border-radius: 50%;
-        padding:2px;
-        background-color: #f0f0f0;
-      }
-
-      .contact-follous a{
-        text-decoration: none;
-        color: #212121;
-      }
-
-      .clearfix {
-        clear: both;
-      }
-
-      [ng\:cloak],
-      [ng-cloak],
-      [data-ng-cloak],
-      [x-ng-cloak],
-      .ng-cloak,
-      .x-ng-cloak {
-        display: none !important;
-      }
-
     </style>
-
     <script>
+
       var app = angular.module('app', []);
-
-      // var getData = function(){
-        
-      // }
-
       app.controller('appController',function($scope,$http) {
 
         $http.get('shoes-data.json').success(function(response) {
@@ -154,25 +211,21 @@
           $scope.shoes = response;
         });
 
+        $scope.resetdata = function(){
+          $scope.search = {};
+        }
 
-        // $scope.dropallShoes = function(val){
-        //   if(val==""){
-        //     $scope.search = {};
-        //   }
-        // }
       });
     </script>
-
   </head>
   <body>
-
     <header>
       <a href="#home" class="logo" data-scroll>COMPANY.B</a>
       <nav class="nav-collapse">
         <ul>
           <li class="menu-item active"><a href="#home" data-scroll>Home</a></li>
           <li class="menu-item"><a href="#about" data-scroll>About</a></li>
-          <li class="menu-item"><a href="#category" data-scroll>Category</a></li>
+          <li class="menu-item"><a href="#product" data-scroll>Products</a></li>
           <li class="menu-item"><a href="#contact" data-scroll>Contact</a></li>
         </ul>
       </nav>
@@ -182,13 +235,13 @@
       <article>
            <h1>COMPANY.B</h1>
             <p>
-            You have brains in your head. 
+            You have brains in your head.
             <br>
-            You have feet in your shoes. You can steer yourself in any direction you choose. 
+            You have feet in your shoes. You can steer yourself in any direction you choose.
             <br>
-            You're on your own, and you know what you know. 
+            You're on your own, and you know what you know.
             <br>
-            And you are the guy who'll decide where to go. 
+            And you are the guy who'll decide where to go.
             <br>
             <i> - Dr. Seuss </i>
             </p>
@@ -217,18 +270,24 @@
       </article>
     </section>
 
-    <section id="category" ng-controller="appController">
+    <section id="product" ng-controller="appController">
       <article>
-        <h1>Category</h1>
-        <ul ng-repeat="shoe in shoes">
-          <li><img src="imgs/shoes/{{ shoe.filename }}" style="width:150px;"/></li>
-        </ul>
+        <h1>Producs</h1>
+        <button ng-click="resetdata();search.gender = 'male'; ">Male</button>
+        <button ng-click="resetdata();search.gender = 'female'">Female</button>
+        <button ng-click="resetdata();search.agecategory = 'children'">Children</button>
+        <div class="clearfix">&nbsp;</div>
+        <div class="category-shoe">
+          <div ng-repeat="shoe in shoes | filter:{'gender': search.gender} : true | filter: {'agecategory' : search.agecategory }" class="category-shoelist">
+            <img src="{{ shoe.filename }}" style="padding-left: 3px;padding-right: 3px;"/>
+          </div>
+        </div>
       </article>
     </section>
 
     <section id="contact">
      <article>
-        <h1>Contact</h1>
+        <h1>Contacts</h1>
         <h2>COMPANY.B<h2>
         <br>
         <p>
