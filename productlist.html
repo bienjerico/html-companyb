@@ -1,0 +1,9 @@
+<button ng-click="resetdata();search.gender = 'male'; ">Male</button>
+<button ng-click="resetdata();search.gender = 'female'">Female</button>
+<button ng-click="resetdata();search.agecategory = 'children'">Children</button>
+<div class="clearfix">&nbsp;</div>
+<div class="category-shoe">
+  <div ng-repeat="shoe in shoes | filter:{'gender': search.gender} : true | filter: {'agecategory' : search.agecategory }" class="category-shoelist">
+    <img src="{{ shoe.filename }}"/>
+  </div>
+</div>

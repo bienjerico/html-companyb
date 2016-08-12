@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/appcomponents.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -73,15 +74,7 @@
     <section id="product" ng-controller="appController">
       <article>
         <h1>Products</h1>
-        <button ng-click="resetdata();search.gender = 'male'; ">Male</button>
-        <button ng-click="resetdata();search.gender = 'female'">Female</button>
-        <button ng-click="resetdata();search.agecategory = 'children'">Children</button>
-        <div class="clearfix">&nbsp;</div>
-        <div class="category-shoe">
-          <div ng-repeat="shoe in shoes | filter:{'gender': search.gender} : true | filter: {'agecategory' : search.agecategory }" class="category-shoelist">
-            <img src="{{ shoe.filename }}" style="padding-left: 3px;padding-right: 3px;"/>
-          </div>
-        </div>
+        <product-list></product-list>
       </article>
     </section>
 

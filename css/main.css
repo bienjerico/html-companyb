@@ -61,6 +61,8 @@ section[id=contact] p {
 section[id=product] img {
     width:200px;
     border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 section[id=product] button {
     background-color: #fff;
