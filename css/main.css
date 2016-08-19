@@ -3,7 +3,7 @@ body {
 }
 
 section[id=home] {
-  background: url('../imgs/wallpaper/shoes-1920x1200.jpg') no-repeat center center fixed;
+  background: url('../imgs/wallpaper/shoes-1920x1200.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -111,9 +111,6 @@ section[id=product] button:hover {
 
 /* Laptop */
 @media screen and (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1){
-   section {
-      height: 700px;
-    }
     section[id=about] article,
     section[id=contact] article {
         width: 80%;
@@ -132,9 +129,6 @@ section[id=product] button:hover {
 
 /* Tablets */
 @media screen and (min-width: 768px) and (max-width: 1200px) {
-   section {
-      height: 650px;
-    }
     section[id=about] article,
     section[id=contact] article {
         width: 80%;
@@ -156,9 +150,6 @@ section[id=product] button:hover {
 
 /* Cellphones */
 @media screen and (max-width: 768px) {
-    section {
-      height: 640px;
-    }
     section[id=home] article {
       padding: 200px 0;
     }
